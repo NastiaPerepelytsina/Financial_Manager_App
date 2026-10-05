@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center">
+            <h1>My Finance</h1>
+            <p>Manager finance</p>
+        </header>
+        <div class="row mb-4 g-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Balance</h4>
+                        <h3><span id="balance">0</span>grn</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- ... -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Income</h4>
+                        <h3><span id="income" class="count">0</span>grn</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Costs</h4>
+                        <h3><span id="expense">0</span>grn</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ <div class="card mb-4">
+    <div class="card-body">
+        <h3>Add operation</h3>
+        <form id="financeForm">
+            <div class="mb-3">
+                <label for="titleInput" class="form-label">Name operation</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="product">
+            </div>
+            <div class="mb-3">
+                <label for="amountInput" class="form-label">Sum</label>
+                <input type="number" class="form-control" id="amountInput" placeholder="Write sum">
+            </div>
+            <div class="mb-3">
+                <label for="typeInput" class="form-label">Type operation</label>
+               <select id="typeInput" class="form-select">
+                    <option value="income">Income</option>
+                    <option value="expense">Cost</option>
+               </select>
+            </div>
+            <p id="message"></p>
+            <button type="submit" class="btn btn-primary">Add operation</button>
+        </form>
+    </div>   
+ </div>
+
+   <div class="card">
+    <div class="card-body">
+        <h3>History operations</h3>
+        <div class="mb-3">
+            <button class="btn btn-outline-primary filter-btn" data-filter="all">All</button>
+            <button class="btn btn-outline-success filter-btn" data-filter="income">Income</button>
+            <button class="btn btn-outline-danger filter-btn" data-filter="expense">Costs</button>
+        </div>
+
+         <div id="transactionList" ></div>
+         <button id="clearBtn" class="btn btn-outline-danger">Clean history</button>
+    </div>
+   </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
